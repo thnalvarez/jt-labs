@@ -1,2 +1,6 @@
 import type { MetadataRoute } from "next";
-export default function sitemap(): MetadataRoute.Sitemap { const url=process.env.NEXT_PUBLIC_SITE_URL; return url ? [{url,lastModified:new Date()}] : []; }
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  return siteUrl ? [{ url: siteUrl, lastModified: new Date() }] : [];
+}

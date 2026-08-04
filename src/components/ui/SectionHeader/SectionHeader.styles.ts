@@ -1,1 +1,6 @@
-export const headerStyles={eyebrow:"mb-3 text-sm font-bold uppercase tracking-[.16em] text-[#009FE3]",title:"text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",description:"mt-5 max-w-2xl text-base leading-7 sm:text-lg"};
+export const headerStyles = {
+  eyebrow: "mb-3 text-sm font-bold uppercase tracking-[.16em] text-[#009FE3]",
+  title:
+    "max-w-3xl text-balance text-[clamp(1.9rem,3vw,3rem)] font-bold leading-[1.08] tracking-tight",
+  description: "mt-5 max-w-2xl text-base leading-7 sm:text-lg",
+};
