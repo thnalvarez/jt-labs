@@ -1,0 +1,1 @@
+export const footerContent={slogan:"Desarrollamos experiencias digitales que impulsan negocios.",location:"Lima, Perú",copyright:`© ${new Date().getFullYear()} JT Labs. Todos los derechos reservados.`} as const;

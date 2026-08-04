@@ -1,0 +1,1 @@
+import {containerStyles} from "./Container.styles"; import type {ContainerProps} from "./Container.types"; export function Container({className="",...props}:ContainerProps){return <div className={`${containerStyles} ${className}`} {...props}/>}

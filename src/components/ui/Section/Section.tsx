@@ -1,0 +1,1 @@
+import {sectionStyles} from "./Section.styles"; import type {SectionProps} from "./Section.types"; export function Section({className="",...props}:SectionProps){return <section className={`${sectionStyles} ${className}`} {...props}/>}

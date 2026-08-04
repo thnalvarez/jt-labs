@@ -1,0 +1,1 @@
+export const heroStyles={grid:"grid items-center gap-12 lg:grid-cols-2",title:"max-w-xl text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl",visual:"relative mx-auto w-full max-w-xl rounded-3xl border border-[#CFEFFF] bg-[#071326] p-4 shadow-2xl"};

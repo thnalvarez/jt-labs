@@ -1,0 +1,1 @@
+export const navbarStyles={root:"sticky top-0 z-40 border-b border-[#DFE7F0]/80 bg-white/90 backdrop-blur",inner:"flex min-h-18 items-center justify-between gap-4",links:"hidden items-center gap-5 lg:flex",mobile:"fixed inset-x-0 top-[73px] border-b border-[#DFE7F0] bg-white p-5 shadow-xl lg:hidden"};
