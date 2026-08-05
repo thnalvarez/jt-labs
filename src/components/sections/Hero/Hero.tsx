@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { homeContent } from "@/content/es/home";
 import { heroStyles } from "./Hero.styles";
 
@@ -29,7 +28,7 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-8 text-[#C2D0E0] sm:text-xl sm:leading-9">
             {homeContent.hero.description}
           </p>
-          <div className="hero-enter hero-enter--late mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="hero-enter hero-enter--late mt-9 flex flex-col gap-3 sm:flex-row">
             <Button
               href="#contacto"
               size="lg"
@@ -45,13 +44,6 @@ export function Hero() {
             >
               Ver proyectos
             </Button>
-            <WhatsAppButton
-              size="lg"
-              variant="outline"
-              className="!border-[#55CFFF]/80 !bg-transparent !text-white hover:-translate-y-1 hover:!border-[#55CFFF] hover:!bg-white/12 hover:!text-white"
-            >
-              Hablar por WhatsApp <Icon name="arrow" size={18} className="button-arrow" />
-            </WhatsAppButton>
           </div>
           <ul
             aria-label="Compromisos de JT Labs"
