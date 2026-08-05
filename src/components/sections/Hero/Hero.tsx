@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-pattern relative isolate overflow-hidden bg-[#071529] py-16 sm:py-[4.5rem] min-[900px]:min-h-[720px] min-[900px]:py-[clamp(64px,7vw,104px)]"
+      className="hero-pattern relative isolate overflow-hidden bg-[#071529] py-10 sm:py-12 min-[900px]:min-h-[640px] min-[900px]:py-[clamp(64px,5vw,80px)]"
     >
       <div aria-hidden="true" className="hero-grid absolute inset-0" />
       <div
@@ -17,7 +17,7 @@ export function Hero() {
         className="absolute -right-32 -top-36 size-[34rem] rounded-full bg-[#16B9FF]/10 blur-3xl sm:-right-20"
       />
       <Container className={`${heroStyles.content} hero-content`}>
-        <div className="hero-enter max-w-[680px]">
+        <div className="hero-enter max-w-[680px] min-[900px]:w-[48%]">
           <p className="mb-5 text-sm font-bold uppercase tracking-[.18em] text-[#55CFFF]">
             Diseño + tecnología con propósito
           </p>
@@ -40,7 +40,7 @@ export function Hero() {
               href="#proyectos"
               size="lg"
               variant="outline"
-              className="border-white/35 bg-white/5 text-white shadow-[0_6px_18px_rgba(0,0,0,.14)] transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:bg-white/12 hover:text-white hover:shadow-[0_12px_24px_rgba(0,0,0,.22)]"
+              className="border-white/35 bg-transparent text-white shadow-[0_6px_18px_rgba(0,0,0,.14)] transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:bg-white/12 hover:text-white hover:shadow-[0_12px_24px_rgba(0,0,0,.22)]"
             >
               Ver proyectos
             </Button>
@@ -70,11 +70,11 @@ export function Hero() {
           priority
           quality={90}
           sizes="(max-width: 899px) calc(100vw - 40px), 60vw"
-          className="object-cover object-right"
+          className="object-cover object-center"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 hidden bg-[linear-gradient(90deg,#071529_0%,rgba(7,21,41,.96)_32%,rgba(7,21,41,.72)_52%,rgba(7,21,41,.15)_75%,transparent_100%)] min-[900px]:block"
+          className="absolute inset-0 hidden bg-[linear-gradient(90deg,#071529_0%,rgba(7,21,41,.98)_28%,rgba(7,21,41,.88)_42%,rgba(7,21,41,.52)_58%,rgba(7,21,41,.12)_78%,transparent_100%)] min-[900px]:block"
         />
       </div>
     </section>
