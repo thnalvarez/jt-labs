@@ -1,1 +1,21 @@
-import {headerStyles} from "./SectionHeader.styles"; import type {SectionHeaderProps} from "./SectionHeader.types"; export function SectionHeader({eyebrow,title,description,dark,className=""}:SectionHeaderProps){return <header className={className}>{eyebrow&&<p className={headerStyles.eyebrow}>{eyebrow}</p>}<h2 className={`${headerStyles.title} ${dark?"text-white":"text-[#071326]"}`}>{title}</h2>{description&&<p className={`${headerStyles.description} ${dark?"text-[#A8B5C7]":"text-[#526176]"}`}>{description}</p>}</header>}
+import { headerStyles } from "./SectionHeader.styles";
+import type { SectionHeaderProps } from "./SectionHeader.types";
+export function SectionHeader({
+  eyebrow,
+  title,
+  description,
+  dark,
+  className = "",
+}: SectionHeaderProps) {
+  return (
+    <header className={className}>
+      {eyebrow && <p className={headerStyles.eyebrow}>{eyebrow}</p>}
+      <h2 className={`${headerStyles.title} ${dark ? "text-white" : "text-[#071326]"}`}>{title}</h2>
+      {description && (
+        <p className={`${headerStyles.description} ${dark ? "text-[#A8B5C7]" : "text-[#526176]"}`}>
+          {description}
+        </p>
+      )}
+    </header>
+  );
+}

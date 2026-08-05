@@ -1,1 +1,1 @@
-export type NavbarProps={};
+export type NavbarProps = {};

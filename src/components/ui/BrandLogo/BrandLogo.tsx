@@ -1,1 +1,22 @@
-import Image from "next/image"; import {brandLogoStyles} from "./BrandLogo.styles"; import type {BrandLogoProps} from "./BrandLogo.types"; export function BrandLogo({width=132,height=44,priority=false,sizes,className=""}:BrandLogoProps){return <Image src="/images/brand/jt-labs-logo.png" alt="Logo de JT Labs" width={width} height={height} priority={priority} sizes={sizes} className={`${brandLogoStyles} ${className}`}/>}
+import Image from "next/image";
+import { brandLogoStyles } from "./BrandLogo.styles";
+import type { BrandLogoProps } from "./BrandLogo.types";
+export function BrandLogo({
+  width = 132,
+  height = 44,
+  priority = false,
+  sizes,
+  className = "",
+}: BrandLogoProps) {
+  return (
+    <Image
+      src="/images/brand/jt-labs-logo.png"
+      alt="Logo de JT Labs"
+      width={width}
+      height={height}
+      priority={priority}
+      sizes={sizes}
+      className={`${brandLogoStyles} ${className}`}
+    />
+  );
+}

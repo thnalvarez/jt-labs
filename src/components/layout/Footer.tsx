@@ -16,7 +16,7 @@ export function Footer() {
   const whatsapp = getWhatsAppUrl();
   const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
   return (
-    <footer id="contacto" className="border-t border-white/10 bg-[#071326] py-14 text-white">
+    <footer className="border-t border-white/10 bg-[#071326] py-14 text-white">
       <Container>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -56,31 +56,38 @@ export function Footer() {
           <div>
             <h2 className="font-bold">Contacto</h2>
             <ul className="mt-5 space-y-4 text-sm text-[#A8B5C7]">
-              <ContactItem icon="message">
-                {whatsapp ? (
+              {whatsapp && (
+                <ContactItem icon="message">
                   <a className="hover:text-[#A8FF00]" href={whatsapp}>
                     WhatsApp
                   </a>
-                ) : (
-                  "WhatsApp próximamente"
-                )}
-              </ContactItem>
-              <ContactItem icon="code">
-                {email ? (
+                </ContactItem>
+              )}
+              {email && (
+                <ContactItem icon="code">
                   <a className="hover:text-[#A8FF00]" href={`mailto:${email}`}>
                     {email}
                   </a>
-                ) : (
-                  "Correo próximamente"
-                )}
-              </ContactItem>
+                </ContactItem>
+              )}
               <ContactItem icon="globe">{footerContent.location}</ContactItem>
+              <ContactItem icon="message">
+                <a className="hover:text-[#A8FF00]" href="#contacto">
+                  Solicitar cotización
+                </a>
+              </ContactItem>
             </ul>
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-[#A8B5C7] sm:flex-row sm:items-center sm:justify-between">
           <p>{footerContent.closing}</p>
-          <p>{footerContent.copyright}</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <a href="/politica-de-privacidad" className="hover:text-[#A8FF00]">
+              Privacidad
+            </a>
+            <span>jtlabs.online</span>
+            <p>{footerContent.copyright}</p>
+          </div>
         </div>
       </Container>
     </footer>

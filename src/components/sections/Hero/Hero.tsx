@@ -2,7 +2,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { BrandLogo } from "@/components/ui/BrandLogo";
-import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { homeContent } from "@/content/es/home";
 import { heroStyles } from "./Hero.styles";
 
@@ -30,12 +29,13 @@ export function Hero() {
             {homeContent.hero.description}
           </p>
           <div className="hero-enter hero-enter--late mt-9 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton
+            <Button
+              href="#contacto"
               size="lg"
               className="shadow-[0_10px_24px_rgba(146,230,0,.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(146,230,0,.36)]"
             >
               Solicitar una cotización <Icon name="arrow" size={18} className="button-arrow" />
-            </WhatsAppButton>
+            </Button>
             <Button
               href="#proyectos"
               size="lg"
@@ -46,7 +46,7 @@ export function Hero() {
             </Button>
           </div>
           <ul
-            aria-label="Especialidades de JT Labs"
+            aria-label="Compromisos de JT Labs"
             className="mt-9 flex flex-wrap items-center gap-y-2 text-sm font-semibold tracking-[-.01em] text-[#526176]"
           >
             {homeContent.hero.trust.map((item, index) => (

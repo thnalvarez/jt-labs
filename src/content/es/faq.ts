@@ -1,3 +1,38 @@
 export const faqItems = [
-["¿Cuánto cuesta desarrollar un sitio web?","El alcance, las integraciones y los objetivos definen la inversión. Conversamos sobre tu necesidad y preparamos una propuesta clara antes de empezar."],["¿Cuánto tiempo toma un proyecto?","Depende del tipo de solución y de la rapidez con que contemos con contenido y validaciones. Definimos un cronograma realista al planificar."],["¿El sitio funcionará en celulares?","Sí. Diseñamos primero para pantallas móviles y adaptamos cada sección para una navegación cómoda en distintos dispositivos."],["¿Puedo actualizar el contenido después?","Podemos preparar una solución que facilite las actualizaciones o acompañarte con mantenimiento, según el proyecto."],["¿Ofrecen mantenimiento?","Sí, contamos con acompañamiento para mejoras, actualizaciones, monitoreo y soporte técnico continuo."],["¿Trabajan con empresas fuera de Perú?","Sí. Podemos coordinar proyectos remotos con empresas de Latinoamérica mediante un proceso claro y comunicación organizada."],["¿Incluyen dominio y hosting?","Podemos orientarte y encargarnos de la configuración de dominio, SSL, hosting y publicación cuando el alcance lo requiera."],["¿Cómo inicia el proyecto?","Comenzamos con una conversación para entender tu negocio, tus objetivos y el tipo de solución que puede aportar más valor."]
+  [
+    "¿Por qué elegir JT Labs?",
+    "Porque combinamos diseño, desarrollo y estrategia comercial en un proceso cercano, transparente y adaptado a cada negocio.",
+  ],
+  [
+    "¿Cuánto cuesta desarrollar un sitio web?",
+    "El alcance, las integraciones y los objetivos definen la inversión. Conversamos sobre tu necesidad y preparamos una propuesta clara antes de empezar.",
+  ],
+  [
+    "¿Cuánto tiempo toma un proyecto?",
+    "Depende del tipo de solución y de la rapidez con que contemos con contenido y validaciones. Definimos un cronograma realista al planificar.",
+  ],
+  [
+    "¿El sitio funcionará en celulares?",
+    "Sí. Diseñamos primero para pantallas móviles y adaptamos cada sección para una navegación cómoda en distintos dispositivos.",
+  ],
+  [
+    "¿Puedo actualizar el contenido después?",
+    "Podemos preparar una solución que facilite las actualizaciones o acompañarte con mantenimiento, según el proyecto.",
+  ],
+  [
+    "¿Ofrecen mantenimiento?",
+    "Sí, contamos con acompañamiento para mejoras, actualizaciones, monitoreo y soporte técnico continuo.",
+  ],
+  [
+    "¿Trabajan con empresas fuera de Perú?",
+    "Sí. Podemos coordinar proyectos remotos con empresas de Latinoamérica mediante un proceso claro y comunicación organizada.",
+  ],
+  [
+    "¿Incluyen dominio y hosting?",
+    "Podemos orientarte y encargarnos de la configuración de dominio, SSL, hosting y publicación cuando el alcance lo requiera.",
+  ],
+  [
+    "¿Cómo inicia el proyecto?",
+    "Comenzamos con una conversación para entender tu negocio, tus objetivos y el tipo de solución que puede aportar más valor.",
+  ],
 ] as const;

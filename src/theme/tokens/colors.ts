@@ -1,1 +1,16 @@
-export const colors={navy:"#071326",darkSurface:"#0B1A30",deepBackground:"#030B18",blue:"#16B9FF",blueHover:"#009FE3",green:"#A8FF00",greenHover:"#92E600",background:"#FFFFFF",softBackground:"#F5F8FC",textPrimary:"#071326",textSecondary:"#526176",textOnDark:"#FFFFFF",mutedOnDark:"#A8B5C7",borderLight:"#DFE7F0"} as const;
+export const colors = {
+  navy: "#071326",
+  darkSurface: "#0B1A30",
+  deepBackground: "#030B18",
+  blue: "#16B9FF",
+  blueHover: "#009FE3",
+  green: "#A8FF00",
+  greenHover: "#92E600",
+  background: "#FFFFFF",
+  softBackground: "#F5F8FC",
+  textPrimary: "#071326",
+  textSecondary: "#526176",
+  textOnDark: "#FFFFFF",
+  mutedOnDark: "#A8B5C7",
+  borderLight: "#DFE7F0",
+} as const;

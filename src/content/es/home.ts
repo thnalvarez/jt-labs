@@ -2,8 +2,8 @@ export const homeContent = {
   hero: {
     title: "Desarrollamos experiencias digitales que impulsan negocios.",
     description:
-      "Creamos sitios web, e-commerce y delivery propio con tecnología moderna para impulsar el crecimiento digital de tu negocio.",
-    trust: ["E-commerce", "Delivery propio", "Sitios corporativos"],
+      "Creamos sitios web, e-commerce y sistemas de delivery para negocios que quieren vender más, trabajar mejor y crecer en digital.",
+    trust: ["Diseño moderno", "Desarrollo rápido", "Enfoque en conversión"],
   },
   industries: [
     "Restaurantes",
@@ -18,40 +18,72 @@ export const homeContent = {
   services: [
     {
       title: "Landing Pages",
-      description: "Páginas enfocadas en campañas, captación de clientes y conversión.",
+      description: "Páginas enfocadas en campañas, promociones, captación de leads y conversión.",
       icon: "rocket",
+      benefits: [
+        "Mensaje directo",
+        "CTA estratégico",
+        "Velocidad",
+        "Integración con publicidad",
+        "Seguimiento de conversiones",
+      ],
     },
     {
-      title: "Sitios Web Corporativos",
+      title: "Sitios web corporativos",
       description:
-        "Sitios profesionales para presentar tu empresa, servicios y propuesta de valor.",
+        "Sitios profesionales para presentar tu empresa, servicios, propuesta de valor y generar nuevos contactos.",
       icon: "building",
+      benefits: [
+        "Imagen profesional",
+        "Servicios organizados",
+        "Formularios de contacto",
+        "SEO inicial",
+        "Diseño responsive",
+      ],
     },
     {
       title: "E-commerce",
-      description: "Tiendas online rápidas, seguras y preparadas para vender.",
+      description:
+        "Tiendas online rápidas, seguras y preparadas para vender productos, gestionar pedidos y crecer.",
       icon: "shopping",
+      benefits: [
+        "Catálogo organizado",
+        "Carrito de compras",
+        "Experiencia mobile first",
+        "Pagos o WhatsApp",
+        "Base preparada para crecer",
+      ],
     },
     {
       title: "Delivery Propio",
       description:
-        "Catálogos, carritos y pedidos por WhatsApp sin depender únicamente de marketplaces.",
+        "Catálogo, carrito y pedidos directos para vender sin depender únicamente de marketplaces.",
       icon: "store",
+      benefits: [
+        "Catálogo digital",
+        "Carrito",
+        "Pedido por WhatsApp",
+        "Reglas de entrega",
+        "Control comercial propio",
+      ],
     },
     {
       title: "SEO y Performance",
       description: "Estructuras optimizadas para buscadores, velocidad y experiencia de usuario.",
       icon: "globe",
+      benefits: [],
     },
     {
       title: "Hosting y Publicación",
       description: "Configuración de dominio, SSL, deploy y publicación profesional.",
       icon: "code",
+      benefits: [],
     },
     {
       title: "Mantenimiento",
       description: "Actualizaciones, mejoras, monitoreo y soporte técnico continuo.",
       icon: "layers",
+      benefits: [],
     },
   ],
   process: [
@@ -67,25 +99,36 @@ export const homeContent = {
       name: "Tasty Burger",
       type: "Proyecto demostrativo",
       category: "Restaurante y delivery",
-      description:
-        "Experiencia digital con catálogo, carrito y pedidos por WhatsApp para una hamburguesería artesanal.",
-      objective: "Facilitar pedidos digitales y presentar el menú.",
-      solution: "Catálogo, carrito y cierre del pedido por WhatsApp.",
+      problem: "El negocio necesitaba presentar su menú y facilitar pedidos digitales.",
+      solution: "Creamos una experiencia con catálogo, carrito y cierre del pedido por WhatsApp.",
       status: "Demostración",
       image: "/images/projects/tasty-burger-preview.png",
-      technologies: ["Next.js", "Tailwind CSS"],
+      features: [
+        "Catálogo por categorías",
+        "Carrito de compras",
+        "Pedido por WhatsApp",
+        "Diseño responsive",
+        "Arquitectura preparada para crecer",
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Vercel"],
     },
     {
       name: "Adega Taka no Copão",
       type: "Proyecto en desarrollo",
       category: "Bodega y delivery",
-      description:
-        "Catálogo digital, carrito y simulación de entrega para un negocio local de bebidas.",
-      objective: "Preparar el negocio para operar un delivery propio.",
-      solution: "Catálogo, carrito y simulación temporal de entrega.",
+      problem: "El negocio necesitaba prepararse para iniciar un canal propio de delivery.",
+      solution: "Diseñamos un catálogo digital con carrito y simulación temporal de entrega.",
       status: "En desarrollo",
       image: "/images/projects/taka-no-copao-preview.png",
-      technologies: ["React", "TypeScript"],
+      features: [
+        "Catálogo de productos",
+        "Carrito",
+        "Pedido mínimo",
+        "Simulación de entrega",
+        "WhatsApp",
+        "Control de acceso 18+",
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Vercel"],
     },
   ],
   technologies: [

@@ -1,1 +1,1 @@
-export const iconStyles="inline-block shrink-0";
+export const iconStyles = "inline-block shrink-0";

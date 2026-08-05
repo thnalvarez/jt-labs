@@ -1,1 +1,1 @@
-export type HeroProps={};
+export type HeroProps = {};

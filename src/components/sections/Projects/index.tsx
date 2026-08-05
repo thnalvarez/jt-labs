@@ -42,17 +42,31 @@ export function Projects() {
                 </div>
                 <h3 className="mt-5 text-2xl font-bold text-[#071326]">{project.name}</h3>
                 <p className="mt-1 font-semibold text-[#0078B5]">{project.category}</p>
-                <p className="mt-4 leading-7 text-[#526176]">{project.description}</p>
                 <dl className="mt-6 grid gap-4 border-y border-[#DFE7F0] py-5 text-sm">
                   <div>
-                    <dt className="font-bold text-[#071326]">Objetivo</dt>
-                    <dd className="mt-1 leading-6 text-[#526176]">{project.objective}</dd>
+                    <dt className="font-bold text-[#071326]">Problema</dt>
+                    <dd className="mt-1 leading-6 text-[#526176]">{project.problem}</dd>
                   </div>
                   <div>
                     <dt className="font-bold text-[#071326]">Solución</dt>
                     <dd className="mt-1 leading-6 text-[#526176]">{project.solution}</dd>
                   </div>
                 </dl>
+                <div className="mt-5">
+                  <p className="text-xs font-bold uppercase tracking-[.12em] text-[#526176]">
+                    Funcionalidades
+                  </p>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-[#526176]">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="flex gap-2">
+                        <span aria-hidden="true" className="text-[#4D8700]">
+                          •
+                        </span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <div className="mt-5">
                   <p className="text-xs font-bold uppercase tracking-[.12em] text-[#526176]">
                     Tecnologías

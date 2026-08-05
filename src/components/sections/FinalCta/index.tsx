@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/common/Reveal";
-import { WhatsAppButton } from "@/components/common/WhatsAppButton";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
@@ -21,11 +21,11 @@ export function FinalCta() {
               resultados.
             </p>
             <div className="mt-8 flex flex-col items-center">
-              <WhatsAppButton size="lg">
-                Cotiza por WhatsApp <Icon name="arrow" size={18} className="button-arrow" />
-              </WhatsAppButton>
+              <Button href="#contacto" size="lg">
+                Solicitar una cotización <Icon name="arrow" size={18} className="button-arrow" />
+              </Button>
               <p className="mt-4 text-sm text-[#D5E0EC]">
-                Cuéntanos sobre tu idea. La primera conversación no tiene costo.
+                Cuéntanos sobre tu idea para entender qué solución puede aportar más valor.
               </p>
             </div>
           </div>

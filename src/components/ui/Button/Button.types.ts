@@ -1,1 +1,13 @@
-import type {ButtonHTMLAttributes,AnchorHTMLAttributes,ReactNode} from "react"; type Base={children:ReactNode;variant?:"primary"|"secondary"|"outline"|"ghost"|"link";size?:"sm"|"md"|"lg";fullWidth?:boolean;loading?:boolean;className?:string}; export type ButtonProps=Base&ButtonHTMLAttributes<HTMLButtonElement>&{href?:never}; export type LinkButtonProps=Base&AnchorHTMLAttributes<HTMLAnchorElement>&{href:string;loading?:never;disabled?:never}; export type ActionButtonProps=ButtonProps|LinkButtonProps;
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+type Base = {
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "link";
+  size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
+  loading?: boolean;
+  className?: string;
+};
+export type ButtonProps = Base & ButtonHTMLAttributes<HTMLButtonElement> & { href?: never };
+export type LinkButtonProps = Base &
+  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; loading?: never; disabled?: never };
+export type ActionButtonProps = ButtonProps | LinkButtonProps;
