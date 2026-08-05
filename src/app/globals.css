@@ -71,6 +71,38 @@ footer[id] {
 .nav-link--active::after {
   transform: scaleX(1);
 }
+.navbar-link {
+  position: relative;
+  padding-block: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+  color: #526176;
+  transition: color 0.25s ease;
+}
+.navbar-link:hover,
+.navbar-link--active {
+  color: #071326;
+}
+.navbar-link::after {
+  position: absolute;
+  right: 0.15rem;
+  bottom: 0.18rem;
+  left: 0.15rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #16b9ff;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.45);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+.navbar-link:hover::after,
+.navbar-link--active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
 .button-arrow {
   transition: transform 0.18s ease;
 }
@@ -81,18 +113,17 @@ button:hover .button-arrow {
 .hero-pattern::before {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(22, 185, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22, 185, 255, 0.06) 1px, transparent 1px),
-    radial-gradient(circle at 78% 44%, rgba(168, 255, 0, 0.13), transparent 17%),
-    radial-gradient(circle at 72% 24%, rgba(22, 185, 255, 0.13), transparent 29%);
-  background-size:
-    36px 36px,
-    36px 36px,
-    auto,
-    auto;
+  background: radial-gradient(circle at 66% 56%, rgba(168, 255, 0, 0.1), transparent 22%);
   content: "";
-  mask-image: linear-gradient(90deg, transparent 0%, black 38%, black 100%);
+  pointer-events: none;
+}
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(7, 21, 41, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 21, 41, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, transparent, black 18%, black 82%, transparent);
+  opacity: 0.55;
   pointer-events: none;
 }
 .hero-pattern > * {
@@ -115,6 +146,9 @@ button:hover .button-arrow {
 }
 .float-three {
   animation: float-three 6.6s ease-in-out infinite;
+}
+.hero-device-float {
+  animation: hero-device-float 6s ease-in-out infinite;
 }
 .reveal {
   transition:
@@ -154,10 +188,25 @@ button:hover .button-arrow {
     transform: translateY(-3px);
   }
 }
+@keyframes hero-device-float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
 @keyframes screen-shine {
   45%,
   100% {
     transform: translateX(100%);
+  }
+}
+@keyframes navbar-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media (prefers-reduced-motion: reduce) {

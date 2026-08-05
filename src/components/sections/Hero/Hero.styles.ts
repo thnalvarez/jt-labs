@@ -1,7 +1,7 @@
 export const heroStyles = {
-  grid: "grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-14",
+  grid: "grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr] lg:gap-20",
   title:
-    "max-w-[13ch] text-balance text-[clamp(2.55rem,5vw,4.35rem)] font-bold leading-[1.04] tracking-[-.045em]",
+    "max-w-[12ch] text-balance text-[clamp(3rem,5.6vw,5rem)] font-bold leading-[.98] tracking-[-.052em] text-[#071326]",
   visual:
-    "relative mx-auto w-full max-w-2xl rounded-3xl border border-[#CFEFFF] bg-[#071326] p-3 shadow-[0_20px_50px_rgba(7,19,38,.16)] sm:p-4",
+    "relative mx-auto w-full max-w-2xl rounded-[1.75rem] border border-[#CFEFFF]/90 bg-[#071326]/95 p-3 shadow-[0_30px_80px_rgba(7,19,38,.22)] sm:p-4",
 };

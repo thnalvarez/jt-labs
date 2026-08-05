@@ -16,7 +16,7 @@ export function Navbar() {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const updateScroll = () => setScrolled(window.scrollY > 8);
+    const updateScroll = () => setScrolled(window.scrollY > 40);
     updateScroll();
     window.addEventListener("scroll", updateScroll, { passive: true });
     return () => window.removeEventListener("scroll", updateScroll);
@@ -75,14 +75,18 @@ export function Navbar() {
   return (
     <header className={`${navbarStyles.root} ${scrolled ? navbarStyles.scrolled : ""}`}>
       <Container className={navbarStyles.inner}>
-        <a href="#inicio" aria-label="Ir al inicio de JT Labs">
-          <BrandLogo width={112} height={38} priority sizes="112px" />
+        <a
+          href="#inicio"
+          aria-label="Ir al inicio de JT Labs"
+          className={`inline-flex origin-left transition-transform duration-[250ms] ease-out ${scrolled ? "scale-[.9]" : "scale-100"}`}
+        >
+          <BrandLogo width={124} height={42} priority sizes="124px" />
         </a>
         <nav aria-label="Navegación principal" className={navbarStyles.links}>
           {navigationItems.map((item) => (
             <a
               key={item.href}
-              className={`nav-link ${active === item.href ? "nav-link--active" : ""}`}
+              className={`navbar-link ${active === item.href ? "navbar-link--active" : ""}`}
               href={item.href}
               aria-current={active === item.href ? "page" : undefined}
             >
@@ -91,14 +95,17 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <WhatsAppButton size="sm">
+          <WhatsAppButton
+            size="sm"
+            className="shadow-[0_8px_20px_rgba(146,230,0,.24)] transition-all duration-[250ms] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(146,230,0,.34)] active:translate-y-0 active:shadow-[0_4px_10px_rgba(146,230,0,.2)]"
+          >
             Cotiza por WhatsApp <Icon name="arrow" size={15} className="button-arrow" />
           </WhatsAppButton>
         </div>
         <button
           ref={toggleRef}
           type="button"
-          className="grid size-11 place-items-center rounded-xl text-[#071326] transition hover:bg-[#F5F8FC] lg:hidden"
+          className="grid size-11 place-items-center rounded-xl text-[#071326] transition-colors duration-[250ms] hover:bg-white/75 focus-visible:bg-white/80 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -114,12 +121,16 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-4 font-semibold text-[#071326] hover:bg-[#F5F8FC]"
+                  className={`rounded-xl px-3 py-4 font-semibold text-[#071326] transition-colors duration-[250ms] hover:bg-[#F5F8FC] focus-visible:bg-[#F5F8FC] ${active === item.href ? "bg-[#F5F8FC] text-[#0078B5]" : ""}`}
+                  aria-current={active === item.href ? "page" : undefined}
                 >
                   {item.label}
                 </a>
               ))}
-              <WhatsAppButton fullWidth className="mt-5">
+              <WhatsAppButton
+                fullWidth
+                className="mt-5 shadow-[0_10px_24px_rgba(146,230,0,.26)] transition-all duration-[250ms] hover:-translate-y-0.5 hover:shadow-[0_14px_28px_rgba(146,230,0,.34)] active:translate-y-0"
+              >
                 Cotiza por WhatsApp <Icon name="arrow" size={16} className="button-arrow" />
               </WhatsAppButton>
             </nav>

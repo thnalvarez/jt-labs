@@ -72,7 +72,7 @@ export const homeContent = {
       objective: "Facilitar pedidos digitales y presentar el menú.",
       solution: "Catálogo, carrito y cierre del pedido por WhatsApp.",
       status: "Demostración",
-      image: "/images/projects/tasty-burger-preview.svg",
+      image: "/images/projects/tasty-burger-preview.png",
       technologies: ["Next.js", "Tailwind CSS"],
     },
     {
@@ -84,7 +84,7 @@ export const homeContent = {
       objective: "Preparar el negocio para operar un delivery propio.",
       solution: "Catálogo, carrito y simulación temporal de entrega.",
       status: "En desarrollo",
-      image: "/images/projects/taka-no-copao-preview.svg",
+      image: "/images/projects/taka-no-copao-preview.png",
       technologies: ["React", "TypeScript"],
     },
   ],

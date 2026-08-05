@@ -21,13 +21,15 @@ export function Projects() {
               className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#DFE7F0] bg-white shadow-[0_6px_24px_rgba(7,19,38,.07)] transition duration-200 hover:-translate-y-1 hover:border-[#16B9FF]/55 hover:shadow-[0_16px_36px_rgba(7,19,38,.12)]"
             >
               <div className="border-b border-[#173452] bg-[#071326] p-3 sm:p-5">
-                <Image
-                  src={project.image}
-                  alt={`Vista previa conceptual de ${project.name}`}
-                  width={800}
-                  height={500}
-                  className="h-auto w-full rounded-xl"
-                />
+                <div className="relative aspect-[8/5] overflow-hidden rounded-xl shadow-[0_4px_14px_rgba(0,0,0,.18)]">
+                  <Image
+                    src={project.image}
+                    alt={`Vista previa conceptual de ${project.name}`}
+                    fill
+                    sizes="(max-width: 1023px) calc(100vw - 48px), 560px"
+                    className="object-cover transition-transform duration-200 group-hover:scale-[1.03]"
+                  />
+                </div>
               </div>
               <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <div className="flex flex-wrap items-center gap-3">
