@@ -105,7 +105,7 @@ export function Navbar() {
         <button
           ref={toggleRef}
           type="button"
-          className="grid size-11 place-items-center rounded-xl text-[#071326] transition-colors duration-[250ms] hover:bg-white/75 focus-visible:bg-white/80 lg:hidden"
+          className="grid size-11 place-items-center rounded-xl text-white transition-colors duration-[250ms] hover:bg-white/10 focus-visible:bg-white/15 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -115,13 +115,13 @@ export function Navbar() {
         </button>
         {open && (
           <div ref={panelRef} id="mobile-navigation" className={navbarStyles.mobile}>
-            <nav aria-label="Navegación móvil" className="flex flex-col divide-y divide-[#DFE7F0]">
+            <nav aria-label="Navegación móvil" className="flex flex-col divide-y divide-white/10">
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-xl px-3 py-4 font-semibold text-[#071326] transition-colors duration-[250ms] hover:bg-[#F5F8FC] focus-visible:bg-[#F5F8FC] ${active === item.href ? "bg-[#F5F8FC] text-[#0078B5]" : ""}`}
+                  className={`rounded-xl px-3 py-4 font-semibold text-white transition-colors duration-[250ms] hover:bg-white/10 hover:text-[#B6FF00] focus-visible:bg-white/15 ${active === item.href ? "bg-white/10 text-[#B6FF00]" : ""}`}
                   aria-current={active === item.href ? "page" : undefined}
                 >
                   {item.label}
