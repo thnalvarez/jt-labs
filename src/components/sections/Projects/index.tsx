@@ -25,7 +25,7 @@ export function Projects() {
                 <div className="relative aspect-[8/5] overflow-hidden rounded-xl shadow-[0_4px_14px_rgba(0,0,0,.18)]">
                   <Image
                     src={project.image}
-                    alt={`Vista previa conceptual de ${project.name}`}
+                    alt={`Vista previa del proyecto ${project.name}`}
                     fill
                     sizes="(max-width: 1023px) calc(100vw - 48px), 560px"
                     className="object-cover transition-transform duration-200 group-hover:scale-[1.03]"
