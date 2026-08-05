@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   description:
     "Creamos sitios web, e-commerce y sistemas de delivery modernos para negocios que quieren vender más y crecer en digital.",
   keywords: ["desarrollo web", "e-commerce", "delivery", "Lima", "soluciones digitales"],
+  applicationName: "JT Labs",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -21,7 +32,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/og/jt-labs-og.svg",
+        url: "/images/og/jt-labs-og.png",
         width: 1200,
         height: 630,
         alt: "JT Labs — Experiencias digitales que impulsan negocios",
@@ -33,7 +44,12 @@ export const metadata: Metadata = {
     title: "JT Labs | E-commerce, delivery y desarrollo web",
     description:
       "Creamos sitios web, e-commerce y sistemas de delivery modernos para negocios que quieren vender más y crecer en digital.",
-    images: ["/images/og/jt-labs-og.svg"],
+    images: [
+      {
+        url: "/images/og/jt-labs-og.png",
+        alt: "JT Labs — Experiencias digitales que impulsan negocios",
+      },
+    ],
   },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
