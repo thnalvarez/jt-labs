@@ -9,15 +9,15 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-pattern relative isolate overflow-hidden bg-[radial-gradient(circle_at_75%_35%,rgba(0,183,255,.18),transparent_45%),linear-gradient(180deg,#081525_0%,#0B1830_100%)] py-12 sm:py-14 lg:py-10"
+      className="hero-pattern relative isolate overflow-hidden bg-[#071529] py-16 sm:py-[4.5rem] min-[900px]:min-h-[720px] min-[900px]:py-[clamp(64px,7vw,104px)]"
     >
       <div aria-hidden="true" className="hero-grid absolute inset-0" />
       <div
         aria-hidden="true"
         className="absolute -right-32 -top-36 size-[34rem] rounded-full bg-[#16B9FF]/10 blur-3xl sm:-right-20"
       />
-      <Container className={`${heroStyles.grid} max-w-[1400px]`}>
-        <div className="hero-enter">
+      <Container className={`${heroStyles.content} hero-content`}>
+        <div className="hero-enter max-w-[680px]">
           <p className="mb-5 text-sm font-bold uppercase tracking-[.18em] text-[#55CFFF]">
             Diseño + tecnología con propósito
           </p>
@@ -61,20 +61,22 @@ export function Hero() {
             ))}
           </ul>
         </div>
-        <div className={`${heroStyles.visual} hero-enter hero-enter--visual`}>
-          <div className="hero-device-float relative aspect-[16/10] min-h-[280px] overflow-hidden rounded-[24px] border border-white/15 bg-[#0B1830] shadow-[0_32px_80px_rgba(0,0,0,.45)] transition-transform duration-500 group-hover:scale-[1.01] sm:min-h-[380px] lg:min-h-[460px]">
-            <Image
-              src="/images/hero/hero-workspace.jpg"
-              alt="Espacio de trabajo de JT Labs con un notebook"
-              fill
-              priority
-              quality={100}
-              sizes="(max-width: 1023px) calc(100vw - 40px), 55vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
       </Container>
+      <div className={`${heroStyles.visual} hero-enter hero-enter--visual`}>
+        <Image
+          src="/images/hero/hero-workspace.jpg"
+          alt="Espacio de trabajo de JT Labs con un notebook"
+          fill
+          priority
+          quality={90}
+          sizes="(max-width: 899px) calc(100vw - 40px), 60vw"
+          className="object-cover object-right"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 hidden bg-[linear-gradient(90deg,#071529_0%,rgba(7,21,41,.96)_32%,rgba(7,21,41,.72)_52%,rgba(7,21,41,.15)_75%,transparent_100%)] min-[900px]:block"
+        />
+      </div>
     </section>
   );
 }
