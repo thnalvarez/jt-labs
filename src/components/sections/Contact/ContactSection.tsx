@@ -2,6 +2,7 @@ import { Reveal } from "@/components/common/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { ContactForm } from "./Contact";
 
 export function Contact() {
@@ -19,6 +20,12 @@ export function Contact() {
           delay={80}
           className="mx-auto mt-10 max-w-3xl rounded-3xl border border-[#DFE7F0] bg-white p-6 shadow-[0_8px_28px_rgba(7,19,38,.06)] sm:p-8"
         >
+          <div className="mb-8 rounded-xl bg-[#F5F8FC] p-4 text-sm leading-6 text-[#526176] sm:flex sm:items-center sm:justify-between sm:gap-4">
+            <p>¿Prefieres hablar ahora? Escríbenos por WhatsApp y te orientamos sin compromiso.</p>
+            <WhatsAppButton variant="link" className="mt-3 shrink-0 sm:mt-0">
+              Hablar por WhatsApp
+            </WhatsAppButton>
+          </div>
           <ContactForm />
         </Reveal>
       </Container>

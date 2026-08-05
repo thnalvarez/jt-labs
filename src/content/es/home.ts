@@ -97,11 +97,11 @@ export const homeContent = {
   projects: [
     {
       name: "Tasty Burger",
-      type: "Proyecto demostrativo",
+      type: "Proyecto realizado",
       category: "Restaurante y delivery",
       problem: "El negocio necesitaba presentar su menú y facilitar pedidos digitales.",
       solution: "Creamos una experiencia con catálogo, carrito y cierre del pedido por WhatsApp.",
-      status: "Demostración",
+      status: "Cliente JT Labs",
       image: "/images/projects/tasty-burger-preview.png",
       features: [
         "Catálogo por categorías",
@@ -114,11 +114,11 @@ export const homeContent = {
     },
     {
       name: "Adega Taka no Copão",
-      type: "Proyecto en desarrollo",
+      type: "Proyecto realizado",
       category: "Bodega y delivery",
       problem: "El negocio necesitaba prepararse para iniciar un canal propio de delivery.",
       solution: "Diseñamos un catálogo digital con carrito y simulación temporal de entrega.",
-      status: "En desarrollo",
+      status: "Cliente JT Labs",
       image: "/images/projects/taka-no-copao-preview.png",
       features: [
         "Catálogo de productos",

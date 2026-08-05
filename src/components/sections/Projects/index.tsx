@@ -3,6 +3,7 @@ import { Reveal } from "@/components/common/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Button } from "@/components/ui/Button";
 import { homeContent } from "@/content/es/home";
 export function Projects() {
   return (
@@ -11,7 +12,7 @@ export function Projects() {
         <Reveal>
           <SectionHeader
             title="Proyectos destacados"
-            description="Conceptos y soluciones creadas para negocios que buscan vender y crecer en digital."
+            description="Proyectos y soluciones creadas para negocios que buscan vender y crecer en digital."
           />
         </Reveal>
         <Reveal delay={80} className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
@@ -33,9 +34,7 @@ export function Projects() {
               </div>
               <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-bold ${project.status === "Demostración" ? "bg-[#EEFFC8] text-[#315700]" : "bg-[#E7F7FF] text-[#0078B5]"}`}
-                  >
+                  <span className="rounded-full bg-[#EEFFC8] px-3 py-1 text-xs font-bold text-[#315700]">
                     {project.status}
                   </span>
                   <span className="text-sm text-[#526176]">{project.type}</span>
@@ -82,14 +81,9 @@ export function Projects() {
                     ))}
                   </ul>
                 </div>
-                <button
-                  type="button"
-                  disabled
-                  aria-disabled="true"
-                  className="mt-7 min-h-11 self-start rounded-xl border border-[#DFE7F0] px-4 text-sm font-bold text-[#526176] opacity-75"
-                >
-                  Próximamente
-                </button>
+                <Button href="#contacto" variant="outline" className="mt-7 self-start">
+                  Quiero una solución similar
+                </Button>
               </div>
             </article>
           ))}
