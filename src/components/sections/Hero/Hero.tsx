@@ -34,7 +34,7 @@ export function Hero() {
               size="lg"
               className="shadow-[0_10px_24px_rgba(146,230,0,.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(146,230,0,.36)]"
             >
-              Cotiza por WhatsApp <Icon name="arrow" size={18} className="button-arrow" />
+              Solicitar una cotización <Icon name="arrow" size={18} className="button-arrow" />
             </WhatsAppButton>
             <Button
               href="#proyectos"
@@ -42,14 +42,21 @@ export function Hero() {
               variant="outline"
               className="border-[#B9C8D8] bg-white/70 shadow-[0_6px_18px_rgba(7,19,38,.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(7,19,38,.12)]"
             >
-              Ver nuestros proyectos
+              Ver proyectos
             </Button>
           </div>
-          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#526176]">
-            {homeContent.hero.trust.map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <Icon name="check" size={18} className="text-[#4D8700]" />
-                {item}
+          <ul
+            aria-label="Especialidades de JT Labs"
+            className="mt-9 flex flex-wrap items-center gap-y-2 text-sm font-semibold tracking-[-.01em] text-[#526176]"
+          >
+            {homeContent.hero.trust.map((item, index) => (
+              <li key={item} className="flex items-center">
+                <span>{item}</span>
+                {index < homeContent.hero.trust.length - 1 && (
+                  <span aria-hidden="true" className="mx-3 text-[#9AA9BB]">
+                    •
+                  </span>
+                )}
               </li>
             ))}
           </ul>

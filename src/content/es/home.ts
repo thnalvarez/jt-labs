@@ -2,8 +2,8 @@ export const homeContent = {
   hero: {
     title: "Desarrollamos experiencias digitales que impulsan negocios.",
     description:
-      "Creamos sitios web modernos, rápidos y enfocados en conversión para empresas que quieren crecer, vender más y destacar en internet.",
-    trust: ["Sitios rápidos", "Diseño moderno", "Enfoque en resultados"],
+      "Creamos sitios web, e-commerce y delivery propio con tecnología moderna para impulsar el crecimiento digital de tu negocio.",
+    trust: ["E-commerce", "Delivery propio", "Sitios corporativos"],
   },
   industries: [
     "Restaurantes",
