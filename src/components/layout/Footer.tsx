@@ -1,4 +1,5 @@
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { footerContent } from "@/content/es/footer";
@@ -78,9 +79,9 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-[#A8B5C7] sm:flex-row sm:items-center sm:justify-between">
           <p>{footerContent.closing}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <a href="/politica-de-privacidad" className="hover:text-[#A8FF00]">
+            <Link href="/politica-de-privacidad" className="hover:text-[#A8FF00]">
               Privacidad
-            </a>
+            </Link>
             <span>jtlabs.online</span>
             <p>{footerContent.copyright}</p>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { navigationItems } from "@/content/es/navigation";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
@@ -14,6 +15,8 @@ export function Navbar() {
   const [active, setActive] = useState("#inicio");
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const homePath = pathname === "/" ? "" : "/";
 
   useEffect(() => {
     const updateScroll = () => setScrolled(window.scrollY > 40);
@@ -76,7 +79,7 @@ export function Navbar() {
     <header className={`${navbarStyles.root} ${scrolled ? navbarStyles.scrolled : ""}`}>
       <Container className={navbarStyles.inner}>
         <a
-          href="#inicio"
+          href={`${homePath}#inicio`}
           aria-label="Ir al inicio de JT Labs"
           className={`inline-flex origin-left transition-transform duration-[250ms] ease-out ${scrolled ? "scale-[.9]" : "scale-100"}`}
         >
@@ -87,7 +90,7 @@ export function Navbar() {
             <a
               key={item.href}
               className={`navbar-link ${active === item.href ? "navbar-link--active" : ""}`}
-              href={item.href}
+              href={`${homePath}${item.href}`}
               aria-current={active === item.href ? "page" : undefined}
             >
               {item.label}
@@ -119,7 +122,7 @@ export function Navbar() {
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={`${homePath}${item.href}`}
                   onClick={() => setOpen(false)}
                   className={`rounded-xl px-3 py-4 font-semibold !text-white transition-colors duration-[250ms] hover:bg-white/10 hover:!text-white focus-visible:bg-white/15 ${active === item.href ? "bg-white/10 !text-white" : ""}`}
                   aria-current={active === item.href ? "page" : undefined}

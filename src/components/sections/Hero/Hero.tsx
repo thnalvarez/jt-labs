@@ -19,6 +19,7 @@ const heroSlides = [
     image: "/images/hero/hero-development.webp",
     alt: "Espacio de trabajo de JT Labs para desarrollo de sitios web",
     mobileObjectPosition: "object-[66%_center]",
+    secondaryCta: { label: "Solución web", href: "/sitio-web" },
   },
   {
     eyebrow: "E-commerce listo para vender",
@@ -30,6 +31,7 @@ const heroSlides = [
     image: "/images/hero/hero-delivery.webp",
     alt: "Preparación de pedidos para una tienda online",
     mobileObjectPosition: "object-[72%_center]",
+    secondaryCta: { label: "Solución e-commerce", href: "/ecommerce" },
   },
   {
     eyebrow: "Landing pages para convertir",
@@ -41,6 +43,7 @@ const heroSlides = [
     image: "/images/hero/hero-ecommerce.webp",
     alt: "Diseño de una landing page para e-commerce",
     mobileObjectPosition: "object-[68%_center]",
+    secondaryCta: { label: "Solución landing page", href: "/landing-page" },
   },
 ];
 
@@ -103,12 +106,12 @@ export function Hero() {
               Solicitar una cotización <Icon name="arrow" size={18} className="button-arrow" />
             </Button>
             <Button
-              href="#proyectos"
+              href={slide.secondaryCta.href}
               size="lg"
               variant="outline"
               className="!border-white/70 !bg-transparent !text-white shadow-[0_6px_18px_rgba(0,0,0,.14)] transition-all duration-300 hover:-translate-y-1 hover:!border-white hover:!bg-white/12 hover:!text-white hover:shadow-[0_12px_24px_rgba(0,0,0,.22)]"
             >
-              Ver proyectos
+              {slide.secondaryCta.label}
             </Button>
           </div>
           <ul

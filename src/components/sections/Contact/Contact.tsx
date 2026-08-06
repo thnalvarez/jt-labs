@@ -4,6 +4,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { trackEvent } from "@/utils/analytics";
 import { getWhatsAppUrl } from "@/utils/whatsapp";
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 const fields = [
   "name",
@@ -155,9 +156,9 @@ export function ContactForm() {
             aria-describedby={errors.privacyAccepted ? "privacy-error" : undefined}
           />
           Acepto ser contactado por JT Labs y he leído la{" "}
-          <a href="/politica-de-privacidad" className="font-semibold text-[#0078B5] underline">
+          <Link href="/politica-de-privacidad" className="font-semibold text-[#0078B5] underline">
             política de privacidad
-          </a>
+          </Link>
           .
         </label>
         {errors.privacyAccepted && <Error id="privacy-error" message={errors.privacyAccepted} />}
