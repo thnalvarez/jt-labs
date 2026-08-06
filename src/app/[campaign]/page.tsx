@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -7,12 +8,19 @@ import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { ToastProvider } from "@/components/common/ToastProvider";
 
 const campaigns = {
-  "sitio-web": { eyebrow: "SITIOS WEB PROFESIONALES", title: "Haz que tu negocio inspire confianza.", description: "Creamos sitios web claros, rápidos y preparados para convertir visitas en nuevas oportunidades.", points: ["Propuesta de valor clara", "Diseño adaptable a celular", "Formulario y WhatsApp", "Base SEO preparada"], cta: "Quiero mi sitio web" },
-  ecommerce: { eyebrow: "E-COMMERCE LISTO PARA VENDER", title: "Tu tienda online, lista para vender.", description: "Catálogo, carrito y pedidos directos para que vendas tus productos con una experiencia simple y rápida.", points: ["Catálogo organizado", "Carrito de compras", "Pedidos directos", "Experiencia mobile first"], cta: "Quiero vender online" },
-  "landing-page": { eyebrow: "LANDING PAGES PARA CONVERTIR", title: "Convierte campañas en contactos.", description: "Páginas enfocadas en una oferta, una acción clara y una experiencia pensada para captar oportunidades.", points: ["Mensaje directo", "CTA estratégico", "Carga rápida", "Preparada para publicidad"], cta: "Quiero una landing page" },
+  "sitio-web": { eyebrow: "SITIOS WEB PROFESIONALES", title: "Haz que tu negocio inspire confianza.", description: "Creamos sitios web claros, rápidos y preparados para convertir visitas en nuevas oportunidades.", seoTitle: "Diseño de sitios web profesionales | JT Labs", seoDescription: "Creamos sitios web rápidos y profesionales para empresas en España y América Latina.", points: ["Propuesta de valor clara", "Diseño adaptable a celular", "Formulario y WhatsApp", "Base SEO preparada"], cta: "Quiero mi sitio web" },
+  ecommerce: { eyebrow: "E-COMMERCE LISTO PARA VENDER", title: "Tu tienda online, lista para vender.", description: "Catálogo, carrito y pedidos directos para que vendas tus productos con una experiencia simple y rápida.", seoTitle: "Tiendas online y e-commerce | JT Labs", seoDescription: "Creamos e-commerce con catálogo, carrito y pedidos directos para vender online.", points: ["Catálogo organizado", "Carrito de compras", "Pedidos directos", "Experiencia mobile first"], cta: "Quiero vender online" },
+  "landing-page": { eyebrow: "LANDING PAGES PARA CONVERTIR", title: "Convierte campañas en contactos.", description: "Páginas enfocadas en una oferta, una acción clara y una experiencia pensada para captar oportunidades.", seoTitle: "Landing pages para campañas | JT Labs", seoDescription: "Diseñamos landing pages rápidas para captar contactos y convertir campañas en oportunidades.", points: ["Mensaje directo", "CTA estratégico", "Carga rápida", "Preparada para publicidad"], cta: "Quiero una landing page" },
 } as const;
 
 export function generateStaticParams() { return Object.keys(campaigns).map((campaign) => ({ campaign })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ campaign: string }> }): Promise<Metadata> {
+  const { campaign } = await params;
+  const content = campaigns[campaign as keyof typeof campaigns];
+  if (!content) return {};
+  return { title: content.seoTitle, description: content.seoDescription, alternates: { canonical: `/${campaign}` }, openGraph: { title: content.seoTitle, description: content.seoDescription, url: `/${campaign}` }, twitter: { title: content.seoTitle, description: content.seoDescription } };
+}
 
 export default async function CampaignPage({ params }: { params: Promise<{ campaign: string }> }) {
   const { campaign } = await params;
