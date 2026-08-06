@@ -1,6 +1,7 @@
 import { ToastProvider } from "@/components/common/ToastProvider";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { Faq } from "@/components/sections/Faq";
 import { Hero } from "@/components/sections/Hero";
 import {
@@ -37,6 +38,9 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <WhatsAppButton className="fixed bottom-5 right-5 z-50 shadow-[0_12px_28px_rgba(146,230,0,.38)] sm:bottom-7 sm:right-7">
+        WhatsApp
+      </WhatsAppButton>
     </ToastProvider>
   );
 }
