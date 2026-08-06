@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Política de privacidad | JT Labs",
   description: "Información inicial sobre el tratamiento de datos de contacto en JT Labs.",
+  alternates: { canonical: "/politica-de-privacidad" },
 };
 
 export default function PrivacyPage() {

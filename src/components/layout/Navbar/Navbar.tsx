@@ -16,7 +16,8 @@ export function Navbar() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const homePath = pathname === "/" ? "" : "/";
+  const isHome = pathname === "/";
+  const homePath = isHome ? "" : "/";
 
   useEffect(() => {
     const updateScroll = () => setScrolled(window.scrollY > 40);
@@ -26,6 +27,8 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!isHome) return;
+
     const sections = navigationItems
       .map(({ href }) => document.querySelector(href))
       .filter((section): section is Element => Boolean(section));
@@ -40,7 +43,7 @@ export function Navbar() {
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     if (!open) return;
@@ -89,9 +92,9 @@ export function Navbar() {
           {navigationItems.map((item) => (
             <a
               key={item.href}
-              className={`navbar-link ${active === item.href ? "navbar-link--active" : ""}`}
+              className={`navbar-link ${isHome && active === item.href ? "navbar-link--active" : ""}`}
               href={`${homePath}${item.href}`}
-              aria-current={active === item.href ? "page" : undefined}
+              aria-current={isHome && active === item.href ? "page" : undefined}
             >
               {item.label}
             </a>
@@ -124,8 +127,8 @@ export function Navbar() {
                   key={item.href}
                   href={`${homePath}${item.href}`}
                   onClick={() => setOpen(false)}
-                  className={`rounded-xl px-3 py-4 font-semibold !text-white transition-colors duration-[250ms] hover:bg-white/10 hover:!text-white focus-visible:bg-white/15 ${active === item.href ? "bg-white/10 !text-white" : ""}`}
-                  aria-current={active === item.href ? "page" : undefined}
+                  className={`rounded-xl px-3 py-4 font-semibold !text-white transition-colors duration-[250ms] hover:bg-white/10 hover:!text-white focus-visible:bg-white/15 ${isHome && active === item.href ? "bg-white/10 !text-white" : ""}`}
+                  aria-current={isHome && active === item.href ? "page" : undefined}
                 >
                   {item.label}
                 </a>
