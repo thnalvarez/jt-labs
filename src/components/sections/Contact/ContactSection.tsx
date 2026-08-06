@@ -15,7 +15,9 @@ export function Contact() {
             title="Cuéntanos sobre tu proyecto"
             description="Completa la información inicial y te contactaremos para entender tu negocio, objetivos y necesidades."
           />
-          <p className="mt-4 text-sm font-semibold text-[#526176]">Atendemos proyectos en España y América Latina, incluido Brasil.</p>
+          <p className="mt-4 text-sm font-semibold text-[#526176]">
+            Atendemos proyectos en España y América Latina, incluido Brasil.
+          </p>
         </Reveal>
         <Reveal
           delay={80}
@@ -23,7 +25,7 @@ export function Contact() {
         >
           <div className="mb-8 rounded-xl bg-[#F5F8FC] p-4 text-sm leading-6 text-[#526176] sm:flex sm:items-center sm:justify-between sm:gap-4">
             <p>¿Prefieres hablar ahora? Escríbenos por WhatsApp y te orientamos sin compromiso.</p>
-            <WhatsAppButton variant="link" className="mt-3 shrink-0 sm:mt-0">
+            <WhatsAppButton variant="link" className="mt-3 min-h-11 shrink-0 sm:mt-0">
               Hablar por WhatsApp
             </WhatsAppButton>
           </div>

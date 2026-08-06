@@ -10,10 +10,21 @@ import type { ReactNode } from "react";
 
 const social = [
   ["TikTok: @agenciajtlabs", contact.tiktokUrl, "tiktok"],
-  process.env.NEXT_PUBLIC_INSTAGRAM_URL && ["Instagram", process.env.NEXT_PUBLIC_INSTAGRAM_URL, "globe"],
-  process.env.NEXT_PUBLIC_LINKEDIN_URL && ["LinkedIn", process.env.NEXT_PUBLIC_LINKEDIN_URL, "globe"],
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL && [
+    "Instagram",
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+    "globe",
+  ],
+  process.env.NEXT_PUBLIC_LINKEDIN_URL && [
+    "LinkedIn",
+    process.env.NEXT_PUBLIC_LINKEDIN_URL,
+    "globe",
+  ],
   process.env.NEXT_PUBLIC_GITHUB_URL && ["GitHub", process.env.NEXT_PUBLIC_GITHUB_URL, "code"],
 ].filter(Boolean) as [string, string, "tiktok" | "globe" | "code"][];
+
+const footerLinkClass =
+  "inline-flex min-h-11 items-center text-sm font-semibold transition-colors hover:text-[#A8FF00]";
 
 export function Footer({ homePath = "" }: { homePath?: string }) {
   const whatsapp = getWhatsAppUrl();
@@ -32,7 +43,7 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#A8FF00]"
+                  className={`${footerLinkClass} gap-2 text-white`}
                 >
                   <Icon name={icon} size={17} />
                   {name}
@@ -58,18 +69,18 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
             <h2 className="font-bold">Contacto</h2>
             <ul className="mt-5 space-y-4 text-sm text-[#A8B5C7]">
               <ContactItem icon="whatsapp">
-                <a className="hover:text-[#A8FF00]" href={whatsapp}>
+                <a className={footerLinkClass} href={whatsapp}>
                   WhatsApp: {contact.whatsappLabel}
                 </a>
               </ContactItem>
               <ContactItem icon="mail">
-                <a className="hover:text-[#A8FF00]" href={`mailto:${contact.email}`}>
+                <a className={footerLinkClass} href={`mailto:${contact.email}`}>
                   Correo: {contact.email}
                 </a>
               </ContactItem>
               <ContactItem icon="globe">{footerContent.location}</ContactItem>
               <ContactItem icon="message">
-                <a className="hover:text-[#A8FF00]" href={`${homePath}#contacto`}>
+                <a className={footerLinkClass} href={`${homePath}#contacto`}>
                   Solicitar cotización
                 </a>
               </ContactItem>
@@ -79,7 +90,7 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
         <div className="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-[#A8B5C7] sm:flex-row sm:items-center sm:justify-between">
           <p>{footerContent.closing}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <Link href="/politica-de-privacidad" className="hover:text-[#A8FF00]">
+            <Link href="/politica-de-privacidad" className={footerLinkClass}>
               Privacidad
             </Link>
             <span>jtlabs.online</span>
@@ -104,7 +115,7 @@ function FooterColumn({
       <ul className="mt-5 space-y-3 text-sm text-[#A8B5C7]">
         {items.map(([label, href]) => (
           <li key={label}>
-            <a className="transition-colors hover:text-[#A8FF00]" href={href}>
+            <a className={footerLinkClass} href={href}>
               {label}
             </a>
           </li>

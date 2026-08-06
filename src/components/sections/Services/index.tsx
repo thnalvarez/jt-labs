@@ -65,7 +65,7 @@ export function Services() {
                 <p className="mt-2 text-sm leading-6 text-[#526176]">{service.description}</p>
                 <ServiceInterestLink
                   service={service.title}
-                  className="mt-4 inline-flex text-sm font-bold text-[#0078B5] hover:underline"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-bold text-[#0078B5] hover:underline"
                 >
                   Consultar
                 </ServiceInterestLink>
