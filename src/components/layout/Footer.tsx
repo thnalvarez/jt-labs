@@ -3,18 +3,19 @@ import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { footerContent } from "@/content/es/footer";
 import { navigationItems } from "@/content/es/navigation";
+import { contact } from "@/config/contact";
 import { getWhatsAppUrl } from "@/utils/whatsapp";
 import type { ReactNode } from "react";
 
 const social = [
-  process.env.NEXT_PUBLIC_INSTAGRAM_URL && ["Instagram", process.env.NEXT_PUBLIC_INSTAGRAM_URL],
-  process.env.NEXT_PUBLIC_LINKEDIN_URL && ["LinkedIn", process.env.NEXT_PUBLIC_LINKEDIN_URL],
-  process.env.NEXT_PUBLIC_GITHUB_URL && ["GitHub", process.env.NEXT_PUBLIC_GITHUB_URL],
-].filter(Boolean) as [string, string][];
+  ["TikTok: @agenciajtlabs", contact.tiktokUrl, "tiktok"],
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL && ["Instagram", process.env.NEXT_PUBLIC_INSTAGRAM_URL, "globe"],
+  process.env.NEXT_PUBLIC_LINKEDIN_URL && ["LinkedIn", process.env.NEXT_PUBLIC_LINKEDIN_URL, "globe"],
+  process.env.NEXT_PUBLIC_GITHUB_URL && ["GitHub", process.env.NEXT_PUBLIC_GITHUB_URL, "code"],
+].filter(Boolean) as [string, string, "tiktok" | "globe" | "code"][];
 
 export function Footer() {
   const whatsapp = getWhatsAppUrl();
-  const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
   return (
     <footer className="border-t border-white/10 bg-[#071326] py-14 text-white">
       <Container>
@@ -23,21 +24,20 @@ export function Footer() {
             <BrandLogo width={130} height={44} sizes="130px" />
             <p className="mt-5 max-w-xs leading-7 text-[#A8B5C7]">{footerContent.slogan}</p>
             <p className="mt-3 text-sm text-[#A8B5C7]">{footerContent.laboratory}</p>
-            {social.length > 0 && (
-              <div className="mt-5 flex gap-4">
-                {social.map(([name, url]) => (
-                  <a
-                    key={name}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-white transition-colors hover:text-[#A8FF00]"
-                  >
-                    {name}
-                  </a>
-                ))}
-              </div>
-            )}
+            <div className="mt-5 flex gap-4">
+              {social.map(([name, url, icon]) => (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#A8FF00]"
+                >
+                  <Icon name={icon} size={17} />
+                  {name}
+                </a>
+              ))}
+            </div>
           </div>
           <FooterColumn
             title="Navegación"
@@ -56,20 +56,16 @@ export function Footer() {
           <div>
             <h2 className="font-bold">Contacto</h2>
             <ul className="mt-5 space-y-4 text-sm text-[#A8B5C7]">
-              {whatsapp && (
-                <ContactItem icon="message">
-                  <a className="hover:text-[#A8FF00]" href={whatsapp}>
-                    WhatsApp
-                  </a>
-                </ContactItem>
-              )}
-              {email && (
-                <ContactItem icon="code">
-                  <a className="hover:text-[#A8FF00]" href={`mailto:${email}`}>
-                    {email}
-                  </a>
-                </ContactItem>
-              )}
+              <ContactItem icon="whatsapp">
+                <a className="hover:text-[#A8FF00]" href={whatsapp}>
+                  WhatsApp: {contact.whatsappLabel}
+                </a>
+              </ContactItem>
+              <ContactItem icon="mail">
+                <a className="hover:text-[#A8FF00]" href={`mailto:${contact.email}`}>
+                  Correo: {contact.email}
+                </a>
+              </ContactItem>
               <ContactItem icon="globe">{footerContent.location}</ContactItem>
               <ContactItem icon="message">
                 <a className="hover:text-[#A8FF00]" href="#contacto">
@@ -120,7 +116,7 @@ function ContactItem({
   icon,
   children,
 }: {
-  icon: "message" | "code" | "globe";
+  icon: "message" | "whatsapp" | "mail" | "globe";
   children: ReactNode;
 }) {
   return (

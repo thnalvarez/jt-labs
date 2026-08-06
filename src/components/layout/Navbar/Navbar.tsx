@@ -121,7 +121,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-xl px-3 py-4 font-semibold text-white transition-colors duration-[250ms] hover:bg-white/10 hover:text-[#B6FF00] focus-visible:bg-white/15 ${active === item.href ? "bg-white/10 text-[#B6FF00]" : ""}`}
+                  className={`rounded-xl px-3 py-4 font-semibold !text-white transition-colors duration-[250ms] hover:bg-white/10 hover:!text-white focus-visible:bg-white/15 ${active === item.href ? "bg-white/10 !text-white" : ""}`}
                   aria-current={active === item.href ? "page" : undefined}
                 >
                   {item.label}

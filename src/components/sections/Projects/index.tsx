@@ -15,11 +15,17 @@ export function Projects() {
             description="Proyectos y soluciones creadas para negocios que buscan vender y crecer en digital."
           />
         </Reveal>
-        <Reveal delay={80} className="mt-10 grid items-stretch gap-6 lg:grid-cols-2">
+        <p className="mt-6 text-sm font-bold text-[#526176] min-[900px]:hidden">
+          Desliza para conocer los proyectos.
+        </p>
+        <Reveal
+          delay={80}
+          className="mt-6 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[900px]:mt-10 min-[900px]:grid min-[900px]:grid-cols-2 min-[900px]:gap-6 min-[900px]:overflow-visible min-[900px]:pb-0"
+        >
           {homeContent.projects.map((project) => (
             <article
               key={project.name}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#DFE7F0] bg-white shadow-[0_6px_24px_rgba(7,19,38,.07)] transition duration-200 hover:-translate-y-1 hover:border-[#16B9FF]/55 hover:shadow-[0_16px_36px_rgba(7,19,38,.12)]"
+              className="group flex h-full w-[86vw] max-w-[420px] shrink-0 snap-center flex-col overflow-hidden rounded-3xl border border-[#DFE7F0] bg-white shadow-[0_6px_24px_rgba(7,19,38,.07)] transition duration-200 hover:-translate-y-1 hover:border-[#16B9FF]/55 hover:shadow-[0_16px_36px_rgba(7,19,38,.12)] min-[900px]:w-auto min-[900px]:max-w-none"
             >
               <div className="border-b border-[#173452] bg-[#071326] p-3 sm:p-5">
                 <div className="relative aspect-[8/5] overflow-hidden rounded-xl shadow-[0_4px_14px_rgba(0,0,0,.18)]">
@@ -27,7 +33,7 @@ export function Projects() {
                     src={project.image}
                     alt={`Vista previa del proyecto ${project.name}`}
                     fill
-                    sizes="(max-width: 1023px) calc(100vw - 48px), 560px"
+                    sizes="(max-width: 899px) 86vw, 560px"
                     className="object-cover transition-transform duration-200 group-hover:scale-[1.03]"
                   />
                 </div>

@@ -18,6 +18,7 @@ const heroSlides = [
       "Presenta tu negocio con una experiencia profesional, clara y preparada para captar oportunidades.",
     image: "/images/hero/hero-development.webp",
     alt: "Espacio de trabajo de JT Labs para desarrollo de sitios web",
+    mobileObjectPosition: "object-[66%_center]",
   },
   {
     eyebrow: "E-commerce listo para vender",
@@ -28,6 +29,7 @@ const heroSlides = [
       "Catálogo, carrito y pedidos directos para que vendas tus productos con una experiencia simple y rápida.",
     image: "/images/hero/hero-delivery.webp",
     alt: "Preparación de pedidos para una tienda online",
+    mobileObjectPosition: "object-[72%_center]",
   },
   {
     eyebrow: "Landing pages para convertir",
@@ -38,6 +40,7 @@ const heroSlides = [
       "Páginas enfocadas en campañas, captación de leads y acciones claras para transformar interés en contacto.",
     image: "/images/hero/hero-ecommerce.webp",
     alt: "Diseño de una landing page para e-commerce",
+    mobileObjectPosition: "object-[68%_center]",
   },
 ];
 
@@ -73,7 +76,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-pattern relative isolate overflow-hidden bg-[#081525] py-10 sm:py-12 min-[900px]:min-h-[640px] min-[900px]:py-[clamp(64px,5vw,80px)]"
+      className="hero-pattern relative isolate min-h-[720px] overflow-hidden bg-[#081525] py-10 sm:py-12 min-[900px]:min-h-[640px] min-[900px]:py-[clamp(64px,5vw,80px)]"
     >
       <div aria-hidden="true" className="hero-grid absolute inset-0" />
       <div
@@ -170,14 +173,14 @@ export function Hero() {
             priority={index === 0}
             quality={90}
             sizes="(max-width: 899px) 100vw, 60vw"
-            className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
+            className={`object-cover ${item.mobileObjectPosition} transition-opacity duration-1000 ease-in-out min-[900px]:object-center ${
               index === activeSlide ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
         <div
           aria-hidden="true"
-          className="absolute inset-0 hidden bg-[linear-gradient(90deg,#081525_0%,rgba(8,21,37,.98)_28%,rgba(8,21,37,.88)_42%,rgba(8,21,37,.52)_58%,rgba(8,21,37,.12)_78%,transparent_100%)] min-[900px]:block"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,21,41,.96)_0%,rgba(7,21,41,.9)_36%,rgba(7,21,41,.72)_62%,rgba(7,21,41,.42)_100%)] min-[900px]:bg-[linear-gradient(90deg,#081525_0%,rgba(8,21,37,.98)_28%,rgba(8,21,37,.88)_42%,rgba(8,21,37,.52)_58%,rgba(8,21,37,.12)_78%,transparent_100%)]"
         />
         <div
           aria-hidden="true"
