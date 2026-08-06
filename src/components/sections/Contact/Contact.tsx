@@ -51,7 +51,8 @@ export function ContactForm() {
       return;
     }
     setStatus("loading");
-    trackEvent("contact_form_submit", { projectType: String(data.get("projectType")) });
+    const source = document.referrer ? new URL(document.referrer).pathname.slice(1) : "";
+    trackEvent("contact_form_submit", { projectType: String(data.get("projectType")), ...(source ? { source } : {}) });
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
