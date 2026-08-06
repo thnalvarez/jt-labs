@@ -15,7 +15,7 @@ const social = [
   process.env.NEXT_PUBLIC_GITHUB_URL && ["GitHub", process.env.NEXT_PUBLIC_GITHUB_URL, "code"],
 ].filter(Boolean) as [string, string, "tiktok" | "globe" | "code"][];
 
-export function Footer() {
+export function Footer({ homePath = "" }: { homePath?: string }) {
   const whatsapp = getWhatsAppUrl();
   return (
     <footer className="border-t border-white/10 bg-[#071326] py-14 text-white">
@@ -48,11 +48,11 @@ export function Footer() {
                   item.label,
                 ),
               )
-              .map((item) => [item.label, item.href])}
+              .map((item) => [item.label, `${homePath}${item.href}`])}
           />
           <FooterColumn
             title="Servicios"
-            items={footerContent.services.map((service) => [service, "#servicios"])}
+            items={footerContent.services.map((service) => [service, `${homePath}#servicios`])}
           />
           <div>
             <h2 className="font-bold">Contacto</h2>
@@ -69,7 +69,7 @@ export function Footer() {
               </ContactItem>
               <ContactItem icon="globe">{footerContent.location}</ContactItem>
               <ContactItem icon="message">
-                <a className="hover:text-[#A8FF00]" href="#contacto">
+                <a className="hover:text-[#A8FF00]" href={`${homePath}#contacto`}>
                   Solicitar cotización
                 </a>
               </ContactItem>
