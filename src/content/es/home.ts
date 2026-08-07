@@ -94,41 +94,54 @@ export const homeContent = {
     "Probamos",
     "Publicamos y acompañamos",
   ],
-  projects: [
+  projectModels: [
     {
-      name: "Tasty Burger",
-      type: "Concepto comercial para restaurante y delivery",
-      category: "Restaurante y delivery",
-      problem: "El negocio necesitaba presentar su menú y facilitar pedidos digitales.",
-      solution: "Creamos una experiencia con catálogo, carrito y cierre del pedido por WhatsApp.",
-      status: "Proyecto modelo",
-      image: "/images/projects/tasty-burger-preview.png",
-      features: [
-        "Catálogo por categorías",
-        "Carrito de compras",
-        "Pedido por WhatsApp",
-        "Diseño responsive",
-        "Arquitectura preparada para crecer",
-      ],
-      technologies: ["Next.js", "React", "TypeScript", "Vercel"],
+      title: "Clínica dental y estética",
+      industry: "Salud y atención especializada",
+      description:
+        "Una web profesional para explicar tratamientos, presentar al equipo y facilitar solicitudes de cita desde cualquier dispositivo.",
+      image: "/images/models/clinic-dental-aesthetic.webp",
+      cta: "Quiero recibir nuevas consultas",
     },
     {
-      name: "Adega Taka no Copão",
-      type: "Proyecto en curso para bodega y delivery",
-      category: "Bodega y delivery",
-      problem: "El negocio necesitaba prepararse para iniciar un canal propio de delivery.",
-      solution: "Diseñamos un catálogo digital con carrito y simulación temporal de entrega.",
-      status: "En desarrollo",
-      image: "/images/projects/taka-no-copao-preview.png",
-      features: [
-        "Catálogo de productos",
-        "Carrito",
-        "Pedido mínimo",
-        "Simulación de entrega",
-        "WhatsApp",
-        "Control de acceso 18+",
-      ],
-      technologies: ["Next.js", "React", "TypeScript", "Vercel"],
+      title: "Salón de belleza con reservas",
+      industry: "Belleza y cuidado personal",
+      description:
+        "Una experiencia elegante para mostrar servicios, profesionales, horarios y convertir visitas en solicitudes de reserva.",
+      image: "/images/models/beauty-booking.webp",
+      cta: "Quiero recibir reservas online",
+    },
+    {
+      title: "Dark kitchen con delivery propio",
+      industry: "Gastronomía y pedidos directos",
+      description:
+        "Un catálogo visual con categorías, carrito y un recorrido directo para recibir pedidos sin depender de un marketplace.",
+      image: "/images/models/dark-kitchen-delivery.webp",
+      cta: "Quiero vender con delivery propio",
+    },
+    {
+      title: "Ferretería con catálogo online",
+      industry: "Retail y comercio local",
+      description:
+        "Una tienda organizada para encontrar productos, consultar disponibilidad y coordinar compra, recojo o entrega.",
+      image: "/images/models/hardware-ecommerce.webp",
+      cta: "Quiero digitalizar mi catálogo",
+    },
+    {
+      title: "Constructora y remodelaciones",
+      industry: "Construcción y servicios para el hogar",
+      description:
+        "Un sitio para presentar servicios, mostrar proyectos autorizados y conducir cada consulta hacia una cotización clara.",
+      image: "/images/models/construction-services.webp",
+      cta: "Quiero mostrar mis proyectos",
+    },
+    {
+      title: "Pet shop con atención veterinaria",
+      industry: "Mascotas, comercio y reservas",
+      description:
+        "Una experiencia que combina productos, delivery, servicios de cuidado y solicitudes de cita en un mismo canal digital.",
+      image: "/images/models/petshop-veterinary.webp",
+      cta: "Quiero unir tienda y reservas",
     },
   ],
   technologies: [
