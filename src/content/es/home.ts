@@ -18,6 +18,7 @@ export const homeContent = {
   services: [
     {
       title: "Landing Pages",
+      href: "/landing-page",
       description: "Páginas enfocadas en campañas, promociones, captación de leads y conversión.",
       icon: "rocket",
       benefits: [
@@ -30,6 +31,7 @@ export const homeContent = {
     },
     {
       title: "Sitios web corporativos",
+      href: "/sitio-web",
       description:
         "Sitios profesionales para presentar tu empresa, servicios, propuesta de valor y generar nuevos contactos.",
       icon: "building",
@@ -43,6 +45,7 @@ export const homeContent = {
     },
     {
       title: "E-commerce",
+      href: "/ecommerce",
       description:
         "Tiendas online rápidas, seguras y preparadas para vender productos, gestionar pedidos y crecer.",
       icon: "shopping",

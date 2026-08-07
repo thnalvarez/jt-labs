@@ -6,6 +6,7 @@ import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ToastProvider } from "@/components/common/ToastProvider";
+import { site } from "@/config/site";
 import { campaigns } from "@/content/es/campaigns";
 
 type CampaignKey = keyof typeof campaigns;
@@ -48,8 +49,27 @@ export default async function CampaignPage({ params }: { params: Promise<{ campa
 
   if (!content) notFound();
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: content.serviceName,
+    serviceType: content.serviceName,
+    description: content.seoDescription,
+    url: `${site.url}/${campaign}`,
+    provider: { "@id": `${site.url}/#organization` },
+    areaServed: [
+      { "@type": "Country", name: "Perú" },
+      { "@type": "Place", name: "Latinoamérica" },
+    ],
+    inLanguage: site.language,
+  };
+
   return (
     <ToastProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
       <main>
         <section className="relative overflow-hidden bg-[#071326] py-24 text-white">

@@ -3,7 +3,7 @@ import { brandLogoStyles } from "./BrandLogo.styles";
 import type { BrandLogoProps } from "./BrandLogo.types";
 export function BrandLogo({
   width = 132,
-  height = 44,
+  height = 132,
   priority = false,
   sizes,
   className = "",

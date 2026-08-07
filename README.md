@@ -13,6 +13,7 @@ npm run dev
 ## Variables de entorno
 
 - `NEXT_PUBLIC_SITE_URL`: URL pública del sitio.
+- `GOOGLE_SITE_VERIFICATION`: token opcional de Google Search Console para verificar el dominio mediante una etiqueta HTML.
 - `NEXT_PUBLIC_WHATSAPP_NUMBER`: número internacional para el canal rápido.
 - `NEXT_PUBLIC_CONTACT_EMAIL`: correo visible si está configurado.
 - `CONTACT_FORM_RECIPIENT` y `RESEND_API_KEY`: reservadas para habilitar la recepción por correo. Sin proveedor configurado, la API comunica el estado pendiente y ofrece fallback a WhatsApp cuando existe número.

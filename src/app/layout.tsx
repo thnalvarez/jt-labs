@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { contact } from "@/config/contact";
+import { site } from "@/config/site";
 import "./globals.css";
+
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jtlabs.online";
+const description =
+  "Creamos sitios web, e-commerce, landing pages y sistemas de delivery para negocios en Perú y Latinoamérica.";
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(site.url),
   alternates: { canonical: "/" },
-  title: "JT Labs | E-commerce, delivery y desarrollo web",
-  description:
-    "Creamos sitios web, e-commerce y sistemas de delivery modernos para negocios que quieren vender más y crecer en digital.",
-  keywords: ["desarrollo web", "e-commerce", "delivery", "Lima", "soluciones digitales"],
-  applicationName: "JT Labs",
+  title: "Diseño web y e-commerce en Perú | JT Labs",
+  description,
+  keywords: [
+    "diseño web en Perú",
+    "desarrollo web en Lima",
+    "e-commerce",
+    "landing pages",
+    "sistemas de delivery",
+  ],
+  applicationName: site.name,
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -22,13 +33,13 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   robots: { index: true, follow: true },
+  verification: googleSiteVerification ? { google: googleSiteVerification } : undefined,
   openGraph: {
     type: "website",
-    locale: "es_LA",
-    siteName: "JT Labs",
-    title: "JT Labs | E-commerce, delivery y desarrollo web",
-    description:
-      "Creamos sitios web, e-commerce y sistemas de delivery modernos para negocios que quieren vender más y crecer en digital.",
+    locale: site.locale,
+    siteName: site.name,
+    title: "Diseño web y e-commerce en Perú | JT Labs",
+    description,
     url: "/",
     images: [
       {
@@ -41,9 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JT Labs | E-commerce, delivery y desarrollo web",
-    description:
-      "Creamos sitios web, e-commerce y sistemas de delivery modernos para negocios que quieren vender más y crecer en digital.",
+    title: "Diseño web y e-commerce en Perú | JT Labs",
+    description,
     images: [
       {
         url: "/images/og/jt-labs-og.png",
@@ -52,6 +62,7 @@ export const metadata: Metadata = {
     ],
   },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
@@ -65,9 +76,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@graph": [
                 {
                   "@type": "Organization",
-                  name: "JT Labs",
-                  url: siteUrl,
-                  areaServed: "Latinoamérica",
+                  "@id": `${site.url}/#organization`,
+                  name: site.name,
+                  url: site.url,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${site.url}/images/brand/jt-labs-logo.png`,
+                  },
+                  email: contact.email,
+                  telephone: `+${contact.whatsappNumber}`,
+                  sameAs: [contact.tiktokUrl],
+                  areaServed: [
+                    { "@type": "Country", name: "Perú" },
+                    { "@type": "Place", name: "Latinoamérica" },
+                  ],
                   address: {
                     "@type": "PostalAddress",
                     addressLocality: "Lima",
@@ -75,17 +97,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   },
                 },
                 {
-                  "@type": "ProfessionalService",
-                  name: "JT Labs",
-                  url: siteUrl,
-                  areaServed: "Latinoamérica",
-                  address: {
-                    "@type": "PostalAddress",
-                    addressLocality: "Lima",
-                    addressCountry: "PE",
-                  },
+                  "@type": "WebSite",
+                  "@id": `${site.url}/#website`,
+                  name: site.name,
+                  url: site.url,
+                  publisher: { "@id": `${site.url}/#organization` },
+                  inLanguage: site.language,
                 },
-                { "@type": "WebSite", name: "JT Labs", url: siteUrl },
               ],
             }),
           }}

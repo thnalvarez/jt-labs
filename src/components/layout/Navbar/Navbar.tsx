@@ -86,7 +86,7 @@ export function Navbar() {
           aria-label="Ir al inicio de JT Labs"
           className={`inline-flex origin-left transition-transform duration-[250ms] ease-out ${scrolled ? "scale-[.9]" : "scale-100"}`}
         >
-          <BrandLogo width={124} height={42} priority sizes="124px" />
+          <BrandLogo width={124} height={124} priority sizes="124px" />
         </a>
         <nav aria-label="Navegación principal" className={navbarStyles.links}>
           {navigationItems.map((item) => (

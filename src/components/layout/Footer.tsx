@@ -33,7 +33,7 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
       <Container>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <BrandLogo width={130} height={44} sizes="130px" />
+            <BrandLogo width={130} height={130} sizes="130px" />
             <p className="mt-5 max-w-xs leading-7 text-[#A8B5C7]">{footerContent.slogan}</p>
             <p className="mt-3 text-sm text-[#A8B5C7]">{footerContent.laboratory}</p>
             <div className="mt-5 flex gap-4">
@@ -63,7 +63,10 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
           />
           <FooterColumn
             title="Servicios"
-            items={footerContent.services.map((service) => [service, `${homePath}#servicios`])}
+            items={footerContent.services.map((service) => [
+              service.label,
+              service.href.startsWith("#") ? `${homePath}${service.href}` : service.href,
+            ])}
           />
           <div>
             <h2 className="font-bold">Contacto</h2>

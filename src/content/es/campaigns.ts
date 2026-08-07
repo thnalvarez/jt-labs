@@ -1,4 +1,5 @@
 export type CampaignContent = {
+  serviceName: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -14,13 +15,14 @@ export type CampaignContent = {
 
 export const campaigns = {
   "sitio-web": {
+    serviceName: "Diseño y desarrollo de sitios web",
     eyebrow: "SITIOS WEB PROFESIONALES",
     title: "Haz que tu negocio inspire confianza.",
     description:
       "Creamos sitios web claros, rápidos y preparados para convertir visitas en nuevas oportunidades.",
-    seoTitle: "Diseño de sitios web profesionales | JT Labs",
+    seoTitle: "Diseño de páginas web en Perú | JT Labs",
     seoDescription:
-      "Creamos sitios web rápidos y profesionales para empresas en España y América Latina.",
+      "Creamos sitios web profesionales, rápidos y adaptables para negocios en Perú y Latinoamérica.",
     cta: "Quiero mi sitio web",
     challenge:
       "Cuando la información está dispersa o la presencia digital no refleja el nivel del negocio, las personas pueden dudar antes de contactarte.",
@@ -68,13 +70,14 @@ export const campaigns = {
     ],
   },
   ecommerce: {
+    serviceName: "Desarrollo de tiendas online y e-commerce",
     eyebrow: "E-COMMERCE LISTO PARA VENDER",
     title: "Tu tienda online, lista para vender.",
     description:
       "Catálogo, carrito y pedidos directos para que vendas tus productos con una experiencia simple y rápida.",
-    seoTitle: "Tiendas online y e-commerce | JT Labs",
+    seoTitle: "Tiendas online y e-commerce en Perú | JT Labs",
     seoDescription:
-      "Creamos e-commerce con catálogo, carrito y pedidos directos para vender online.",
+      "Creamos tiendas online con catálogo, carrito y pedidos directos para negocios en Perú y Latinoamérica.",
     cta: "Quiero vender online",
     challenge:
       "Vender por mensajes o catálogos dispersos hace más difícil que cada persona encuentre productos, compare opciones y complete un pedido.",
@@ -122,13 +125,14 @@ export const campaigns = {
     ],
   },
   "landing-page": {
+    serviceName: "Diseño y desarrollo de landing pages",
     eyebrow: "LANDING PAGES PARA CONVERTIR",
     title: "Convierte campañas en contactos.",
     description:
       "Páginas enfocadas en una oferta, una acción clara y una experiencia pensada para captar oportunidades.",
-    seoTitle: "Landing pages para campañas | JT Labs",
+    seoTitle: "Landing pages en Perú para campañas | JT Labs",
     seoDescription:
-      "Diseñamos landing pages rápidas para captar contactos y convertir campañas en oportunidades.",
+      "Diseñamos landing pages rápidas y claras para campañas y captación de oportunidades en Perú y Latinoamérica.",
     cta: "Quiero una landing page",
     challenge:
       "Una campaña pierde fuerza cuando el anuncio, la oferta y el siguiente paso no hablan el mismo idioma o compiten entre sí.",

@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/common/Reveal";
 import { ServiceInterestLink } from "@/components/common/ServiceInterestLink";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
@@ -41,12 +42,22 @@ export function Services() {
                   </li>
                 ))}
               </ul>
-              <ServiceInterestLink
-                service={service.title}
-                className="mt-7 inline-flex min-h-11 items-center gap-2 self-start text-sm font-bold text-[#0078B5] underline-offset-4 hover:underline"
-              >
-                Consultar esta solución <Icon name="arrow" size={16} className="button-arrow" />
-              </ServiceInterestLink>
+              {"href" in service ? (
+                <Button
+                  href={service.href}
+                  variant="link"
+                  className="mt-7 min-h-11 self-start text-sm text-[#0078B5] underline-offset-4 hover:underline"
+                >
+                  Ver esta solución <Icon name="arrow" size={16} className="button-arrow" />
+                </Button>
+              ) : (
+                <ServiceInterestLink
+                  service={service.title}
+                  className="mt-7 inline-flex min-h-11 items-center gap-2 self-start text-sm font-bold text-[#0078B5] underline-offset-4 hover:underline"
+                >
+                  Consultar esta solución <Icon name="arrow" size={16} className="button-arrow" />
+                </ServiceInterestLink>
+              )}
             </article>
           ))}
         </Reveal>
